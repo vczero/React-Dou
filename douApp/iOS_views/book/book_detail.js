@@ -1,7 +1,8 @@
 var React = require('react-native');
-var Util = require('./../util');
-var ServiceURL = require('./../service');
+var Util = require('./../common/util');
+var ServiceURL = require('./../common/service');
 var BookItem = require('./book_item');
+var Header = require('./../common/header');
 
 var {
   StyleSheet,
@@ -23,7 +24,16 @@ module.exports = React.createClass({
     return(
       <ScrollView style={styles.m10}>
         {
-          this.state.data ? <BookItem row={this.state.data}/> : Util.loading
+          this.state.data ?
+            <View>
+              <Header
+                initObj={{
+                    backName: '图书',
+                    title: this.state.data.title
+                }}/>
+              <BookItem row={this.state.data}/>
+            </View>
+            : Util.loading
         }
       </ScrollView>
     );
@@ -34,7 +44,6 @@ module.exports = React.createClass({
     var that = this;
     var url = ServiceURL.book_search_id + '/' + id;
     Util.get(url, function(data){
-      console.log(data);
       that.setState({
         data: data
       });
@@ -46,7 +55,6 @@ module.exports = React.createClass({
 
 var styles = StyleSheet.create({
   m10:{
-    marginTop:24
   }
 });
 

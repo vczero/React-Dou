@@ -1,7 +1,7 @@
 var React = require('react-native');
-var Search = require('./../search');
-var Util = require('./../util');
-var ServiceURL = require('./../service');
+var Search = require('./../common/search');
+var Util = require('./../common/util');
+var ServiceURL = require('./../common/service');
 var BookItem = require('./book_item');
 var BookDetail = require('./book_detail');
 
@@ -99,7 +99,8 @@ module.exports = React.createClass({
 
 var styles = StyleSheet.create({
   flex_1:{
-    flex:1
+    flex:1,
+    marginTop:5
   },
   search:{
     paddingLeft:5,

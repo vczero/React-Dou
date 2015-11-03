@@ -1,7 +1,7 @@
 var React = require('react-native');
-var Search = require('./search');
-var Util = require('./util');
-var ServiceURL = require('./service');
+var Search = require('./../common/search');
+var Util = require('./../common/util');
+var ServiceURL = require('./../common/service');
 
 var {
   StyleSheet,

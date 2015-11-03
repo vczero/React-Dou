@@ -1,8 +1,8 @@
 var React = require('react-native');
-var Navigation = require('./iOS_views/navigation');
+var Navigation = require('./iOS_views/common/navigation');
 var Book = require('./iOS_views/book/book');
-var Music = require('./iOS_views/music');
-var Movie = require('./iOS_views/movie');
+var Music = require('./iOS_views/music/music');
+var Movie = require('./iOS_views/movie/movie');
 
 var {
   AppRegistry,
@@ -14,7 +14,7 @@ var {
   StatusBarIOS
 } = React;
 
-StatusBarIOS.setNetworkActivityIndicatorVisible(true);
+StatusBarIOS.setHidden(true);
 
 var douApp = React.createClass({
   getInitialState: function(){
