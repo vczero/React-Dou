@@ -1,5 +1,7 @@
 var React = require('react-native');
 var Icon = require('./right_icon');
+var Util = require('./../common/util');
+
 var {
   StyleSheet,
   Text,
@@ -15,17 +17,20 @@ module.exports = React.createClass({
   render: function(){
     var obj = this.props.initObj;
     return (
-      <View style={[styles.header, styles.row]}>
-        <View style={styles.row}>
+      <View style={[styles.header, styles.row, styles.center]}>
+        <TouchableOpacity style={[styles.row,styles.center]} onPress={this._pop}>
           <Icon/>
           <Text style={styles.fontFFF}>{obj.backName}</Text>
+        </TouchableOpacity>
+        <View style={[styles.title, styles.center]}>
+          <Text style={[styles.fontFFF, styles.titlePos]} numberOfLines={1}>{obj.title}</Text>
         </View>
-        <View style={styles.title}>
-          <Text style={styles.fontFFF}>{obj.title}</Text>
-        </View>
-        <View></View>
       </View>
     );
+  },
+
+  _pop: function(){
+    this.props.navigator.pop();
   }
 });
 
@@ -39,13 +44,19 @@ var styles = StyleSheet.create({
   },
   fontFFF:{
     color:'#fff',
-    fontSize:16
+    fontSize:17,
+    fontWeight:'bold'
   },
   title:{
-    flex:1,
+    flex:1
+  },
+  titlePos:{
+    marginLeft:-20,
+    width:200
+  },
+  center:{
     justifyContent:'center',
-    alignItems:'center',
-    fontWeight:'bold'
+    alignItems:'center'
   }
 });
 

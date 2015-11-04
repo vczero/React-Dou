@@ -1,6 +1,6 @@
 var React = require('react-native');
 var Navigation = require('./iOS_views/common/navigation');
-var Book = require('./iOS_views/book/book');
+var Book = require('./iOS_views/book/book_list');
 var Music = require('./iOS_views/music/music');
 var Movie = require('./iOS_views/movie/movie');
 
