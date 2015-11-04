@@ -1,5 +1,5 @@
 var React = require('react-native');
-var Icon = require('./right_icon');
+var Icon = require('./left_icon');
 var Util = require('./../common/util');
 
 var {
