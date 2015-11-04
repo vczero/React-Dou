@@ -2,6 +2,7 @@ var React = require('react-native');
 var Search = require('./../common/search');
 var Util = require('./../common/util');
 var ServiceURL = require('./../common/service');
+var webView = require('./../common/webview');
 
 var {
   StyleSheet,
@@ -63,9 +64,37 @@ module.exports = React.createClass({
   },
 
   _renderRow: function(row){
-    return (
-      <View>
+    var casts = row.casts;
+    var names = [];
+    for(var i in casts){
+      names.push(casts[i].name);
+    }
 
+    return (
+      <View style={[styles.row,styles.item]}>
+        <View>
+          <Image style={styles.img} source={{uri: row.images.medium}}/>
+        </View>
+        <View>
+          <Text style={styles.textWitdh} numberOfLines={1}>
+            名称：{row.title}
+          </Text>
+          <Text style={styles.textWitdh} numberOfLines={1}>
+            演员：{names}
+          </Text>
+          <Text style={styles.textWitdh} numberOfLines={1}>
+            评分：{row.rating.average}
+          </Text>
+          <Text style={styles.textWitdh} numberOfLines={1}>
+            时间：{row.year}
+          </Text>
+          <Text style={styles.textWitdh} numberOfLines={1}>
+            标签：{row.genres}
+          </Text>
+          <TouchableOpacity style={styles.goDou} onPress={this._goDouBan.bind(this, row.title, row.alt)}>
+            <Text>去豆瓣</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   },
@@ -88,6 +117,17 @@ module.exports = React.createClass({
       });
     }, function(err){
       alert(err);
+    });
+  },
+
+  _goDouBan: function(title, url){
+    this.props.navigator.push({
+      component: webView,
+      passProps:{
+        backName: '电影',
+        title: title,
+        url: url
+      }
     });
   }
 
@@ -114,5 +154,34 @@ var styles = StyleSheet.create({
   },
   row:{
     flexDirection:'row'
+  },
+  img:{
+    width:80,
+    height:110,
+    resizeMode: Image.resizeMode.contain
+  },
+  textWitdh:{
+    width:200,
+    marginLeft:10
+  },
+  item:{
+    marginTop:10,
+    height:140,
+    paddingTop:15,
+    paddingLeft:10,
+    borderBottomWidth:Util.pixel,
+    borderTopWidth:Util.pixel,
+    borderColor:"#ddd"
+  },
+  goDou:{
+    justifyContent:'center',
+    alignItems:'center',
+    height:32,
+    width:60,
+    borderWidth:Util.pixel,
+    borderColor:'#3C9BFD',
+    marginLeft:30,
+    marginTop:10,
+    borderRadius:3
   }
 });

@@ -24,7 +24,7 @@ module.exports = React.createClass({
             title: this.props.title
           }}/>
         <WebView
-          contentInset={{top:-50}}
+          contentInset={{top:-40}}
           style={{width: Util.size.width, height:Util.size.height -50}}
           url={this.props.url}></WebView>
       </View>
