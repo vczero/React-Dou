@@ -2,6 +2,7 @@ var React = require('react-native');
 var Search = require('./../common/search');
 var Util = require('./../common/util');
 var ServiceURL = require('./../common/service');
+var webView = require('./../common/webview');
 
 var {
   StyleSheet,
@@ -70,14 +71,14 @@ module.exports = React.createClass({
         </View>
         <View style={[styles.row]}>
           <Text style={[styles.flex_1,{marginLeft:20}]} numberOfLines={1}>曲目：{row.title}</Text>
-          <Text style={[styles.textWidth]} numberOfLines={1}>演唱：{row.author[0].name}</Text>
+          <Text style={[styles.textWidth]} numberOfLines={1}>演唱：{row.author}</Text>
         </View>
         <View style={[styles.row]}>
           <Text style={[styles.flex_1, {marginLeft:20}]} numberOfLines={1}>时间：{row.attrs['pubdate']}</Text>
           <Text style={styles.textWidth} numberOfLines={1}>评分：{row['rating']['average']}</Text>
         </View>
         <View style={[styles.center]}>
-          <TouchableOpacity style={[styles.goDou, styles.center]}>
+          <TouchableOpacity style={[styles.goDou, styles.center]} onPress={this._goDouBan.bind(this, row.title, row.mobile_link)}>
             <Text>去豆瓣</Text>
           </TouchableOpacity>
         </View>
@@ -104,8 +105,18 @@ module.exports = React.createClass({
     }, function(err){
       alert(err);
     });
-  }
+  },
 
+  _goDouBan: function(title, url){
+    this.props.navigator.push({
+      component: webView,
+      passProps:{
+        title: title,
+        url: url,
+        backName: '音乐'
+      }
+    });
+  }
 });
 
 var styles = StyleSheet.create({
