@@ -92,7 +92,7 @@ module.exports = React.createClass({
             标签：{row.genres}
           </Text>
           <TouchableOpacity style={styles.goDou} onPress={this._goDouBan.bind(this, row.title, row.alt)}>
-            <Text>去豆瓣</Text>
+            <Text>详情</Text>
           </TouchableOpacity>
         </View>
       </View>

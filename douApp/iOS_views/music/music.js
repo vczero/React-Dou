@@ -79,7 +79,7 @@ module.exports = React.createClass({
         </View>
         <View style={[styles.center]}>
           <TouchableOpacity style={[styles.goDou, styles.center]} onPress={this._goDouBan.bind(this, row.title, row.mobile_link)}>
-            <Text>去豆瓣</Text>
+            <Text>详情</Text>
           </TouchableOpacity>
         </View>
       </View>
