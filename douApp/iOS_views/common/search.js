@@ -1,4 +1,5 @@
 var React = require('react-native');
+var Util = require('./util');
 var {
   StyleSheet,
   Text,
@@ -22,7 +23,7 @@ var styles = StyleSheet.create({
     flex:1
   },
   input:{
-    borderWidth:1,
+    borderWidth:Util.pixel,
     height:40,
     borderColor:'#DDDDDD',
     paddingLeft:5

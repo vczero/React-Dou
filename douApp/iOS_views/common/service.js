@@ -2,9 +2,8 @@
  *
  * 服务URL
  * 基于豆瓣Open API的图书、音乐、电影服务
- *
+ * 如果https://api.douban.com/v2/都保持不变，则可以将其设置为BaseURL
  */
-
 module.exports = {
   //图书搜索
   book_search: 'https://api.douban.com/v2/book/search',

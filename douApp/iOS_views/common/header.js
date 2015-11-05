@@ -12,7 +12,6 @@ var {
   TouchableOpacity
   } = React;
 
-
 module.exports = React.createClass({
   render: function(){
     var obj = this.props.initObj;

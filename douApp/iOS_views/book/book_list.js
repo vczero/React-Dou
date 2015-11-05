@@ -119,5 +119,4 @@ var styles = StyleSheet.create({
   row:{
     flexDirection:'row'
   }
-
 });

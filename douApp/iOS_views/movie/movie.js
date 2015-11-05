@@ -20,7 +20,7 @@ module.exports = React.createClass({
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     return {
       dataSource: ds.cloneWithRows([]),
-      keywords: '幸福',
+      keywords: '功夫熊猫',
       show: false
     };
   },

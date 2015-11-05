@@ -3,14 +3,8 @@ var Util = require('./util');
 var Header = require('./header');
 
 var {
-  StyleSheet,
-  Text,
-  View,
-  ListView,
-  Image,
-  ScrollView,
   WebView,
-  TouchableOpacity
+  View
   } = React;
 
 module.exports = React.createClass({
@@ -33,6 +27,3 @@ module.exports = React.createClass({
   }
 });
 
-var styles = StyleSheet.create({
-
-});

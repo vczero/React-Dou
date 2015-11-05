@@ -13,8 +13,7 @@ var {
   } = React;
 
 module.exports = {
-
-  /*单位像素*/
+  /*最小线宽*/
   pixel: 1 / PixelRatio.get(),
 
   /*屏幕尺寸*/
@@ -22,7 +21,6 @@ module.exports = {
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height
   },
-
   /**
    * 基于fetch的get方法
    * @method post
@@ -39,5 +37,6 @@ module.exports = {
         failCallback(err);
       });
   },
+  /*loading效果*/
   loading: <ActivityIndicatorIOS color="#3E00FF" style={{marginTop:40,marginLeft:Dimensions.get('window').width/2-10}}/>
 };

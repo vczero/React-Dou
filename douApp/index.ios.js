@@ -15,7 +15,6 @@ var {
 } = React;
 
 StatusBarIOS.setHidden(true);
-
 var douApp = React.createClass({
   getInitialState: function(){
     return {
@@ -63,15 +62,6 @@ var douApp = React.createClass({
       </TabBarIOS>
     );
   }
-});
-
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor:'#FAFBFB'
-  }
-
 });
 
 AppRegistry.registerComponent('douApp', () => douApp);

@@ -35,7 +35,6 @@ module.exports = React.createClass({
       </TouchableOpacity>
     );
   }
-
 });
 
 var styles = StyleSheet.create({
