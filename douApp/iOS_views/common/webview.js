@@ -9,6 +9,7 @@ var {
 
 module.exports = React.createClass({
   render: function(){
+    console.log(this.props.url);
     return (
       <View>
         <Header
@@ -18,9 +19,8 @@ module.exports = React.createClass({
             title: this.props.title
           }}/>
         <WebView
-          contentInset={{top:-40}}
           startInLoadingState={true}
-          style={{width: Util.size.width, height:Util.size.height -50}}
+          style={{width: Util.size.width, height:Util.size.height - 50 -44}}
           url={this.props.url}></WebView>
       </View>
     );
