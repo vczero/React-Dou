@@ -12,7 +12,7 @@ module.exports = React.createClass({
   render: function(){
     return (
       <View style={styles.flex_1}>
-        <TextInput style={[styles.flex_1, styles.input]} autoCapitalize='none' {...this.props}/>
+        <TextInput style={[styles.flex_1, styles.input]} autoCapitalize='none' clearButtonMode='while-editing' {...this.props}/>
       </View>
     );
   }
