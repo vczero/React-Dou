@@ -2,6 +2,7 @@ import Util from './../common/util' ;
 import Header from './../common/header' ;
 import ServiceURL from './../common/service' ;
 import BookItem from './book_item' ;
+// import NavigationBar from './../common/navigationBar' ;
 
 import React,{
     StyleSheet,
@@ -68,7 +69,6 @@ module.exports = React.createClass({
 var styles = StyleSheet.create({
   m10:{
     flex:1,
-    top:0,
   },
   title:{
     fontSize:16,
