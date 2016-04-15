@@ -17,11 +17,11 @@ module.exports = React.createClass({
     return(
       <Navigator
         initialRoute={{name: '', component: this.props.component, index:0}}
-        configureScene={()=>{return Navigator.SceneConfigs.FloatFromBottom;}}
+        configureScene={()=>{return Navigator.SceneConfigs.PushFromRight;}}
         renderScene={(route, navigator) => {
-          const Component = route.component;
+          let Component = route.component;
           return (
-            <View style={{flex: 1}}>
+            <View style={{flex: 1,marginTop: 20}}>
               <Component navigator={navigator} route={route} {...route.passProps}/>
             </View>
           );
