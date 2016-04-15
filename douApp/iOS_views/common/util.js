@@ -13,6 +13,9 @@ var {
   } = React;
 
 module.exports = {
+  navigationHeight: 44,
+  navigationBarBGColor:'#3497FF',
+  statusBarHeight: 20,
   /*最小线宽*/
   pixel: 1 / PixelRatio.get(),
 
@@ -32,6 +35,7 @@ module.exports = {
       .then((response) => response.text())
       .then((responseText) => {
         successCallback(JSON.parse(responseText));
+        console.log(responseText);
       })
       .catch(function(err){
         failCallback(err);

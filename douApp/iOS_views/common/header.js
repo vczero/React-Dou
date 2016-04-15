@@ -38,8 +38,8 @@ var styles = StyleSheet.create({
     flexDirection:'row'
   },
   header:{
-    height:50,
-    backgroundColor:'#3497FF'
+    height:Util.navigationHeight ,
+    backgroundColor:Util.navigationBarBGColor,
   },
   fontFFF:{
     color:'#fff',
@@ -51,7 +51,7 @@ var styles = StyleSheet.create({
   },
   titlePos:{
     marginLeft:-20,
-    width:200
+    width:200,
   },
   center:{
     justifyContent:'center',
