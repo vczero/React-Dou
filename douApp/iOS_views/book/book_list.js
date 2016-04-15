@@ -27,7 +27,7 @@ module.exports = React.createClass({
   },
   render: function(){
     return(
-      <View style={[styles.flex_1]}>
+      <View style={[styles.flex_1,{marginBottom:44}]}>
 
         <View style={[styles.search, styles.row]}>
           <View style={styles.flex_1}>
