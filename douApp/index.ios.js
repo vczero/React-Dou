@@ -14,7 +14,7 @@ var {
   StatusBarIOS
 } = React;
 
-StatusBarIOS.setHidden(true);
+// StatusBarIOS.setHidden(true);
 var douApp = React.createClass({
   getInitialState: function(){
     return {
