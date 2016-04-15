@@ -19,7 +19,7 @@ module.exports = React.createClass({
           }}/>
         <WebView
           startInLoadingState={true}
-          style={{width: Util.size.width, height:Util.size.height - 50 -44}}
+          style={{width: Util.size.width, height:Util.size.height - Util.navigationHeight - 44}}
           source={{uri:this.props.url}}></WebView>
       </View>
     );

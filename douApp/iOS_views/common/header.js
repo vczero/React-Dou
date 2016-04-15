@@ -9,7 +9,7 @@ import React,{
 } from 'react-native';
 
 module.exports = React.createClass({
-  render: function(){
+  render(){
     var obj = this.props.initObj;
     return (
       <View style={[styles.header, styles.row, styles.center]}>
