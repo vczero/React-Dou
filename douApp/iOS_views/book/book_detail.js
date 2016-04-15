@@ -1,18 +1,16 @@
-var React = require('react-native');
-var Util = require('./../common/util');
-var ServiceURL = require('./../common/service');
-var BookItem = require('./book_item');
-var Header = require('./../common/header');
+import Util from './../common/util' ;
+import Header from './../common/header' ;
+import ServiceURL from './../common/service' ;
+import BookItem from './book_item' ;
 
-var {
-  StyleSheet,
-  Text,
-  View,
-  ListView,
-  Image,
-  ScrollView,
-  TouchableOpacity
-  } = React;
+import React,{
+    StyleSheet,
+    View,
+    Text,
+    Image,
+    TouchableOpacity,
+    ScrollView,
+} from 'react-native';
 
 module.exports = React.createClass({
   getInitialState: function(){

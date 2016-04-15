@@ -1,17 +1,15 @@
-var React = require('react-native');
-var Search = require('./../common/search');
-var Util = require('./../common/util');
-var ServiceURL = require('./../common/service');
-var webView = require('./../common/webview');
-
-var {
-  StyleSheet,
-  Text,
-  View,
-  ListView,
-  Image,
-  TouchableOpacity
-  } = React;
+import Util from './../common/util' ;
+import Search from './../common/search' ;
+import ServiceURL from './../common/service' ;
+import webView from './../common/webview' ;
+import React,{
+    StyleSheet,
+    View,
+    Text,
+    ListView,
+    Image,
+    TouchableOpacity
+} from 'react-native';
 
 module.exports = React.createClass({
   getInitialState: function() {
@@ -62,6 +60,11 @@ module.exports = React.createClass({
   },
 
   _renderRow: function(row){
+    var authors = row.author;
+    var names = [];
+    for(var i in authors){
+      names.push(authors[i].name);
+    }
     return (
       <View style={styles.item}>
         <View style={styles.center}>
@@ -69,7 +72,7 @@ module.exports = React.createClass({
         </View>
         <View style={[styles.row]}>
           <Text style={[styles.flex_1,{marginLeft:20}]} numberOfLines={1}>曲目：{row.title}</Text>
-          <Text style={[styles.textWidth]} numberOfLines={1}>演唱：{row.author}</Text>
+          <Text style={[styles.textWidth]} numberOfLines={1}>演唱：{names}</Text>
         </View>
         <View style={[styles.row]}>
           <Text style={[styles.flex_1, {marginLeft:20}]} numberOfLines={1}>时间：{row.attrs['pubdate']}</Text>

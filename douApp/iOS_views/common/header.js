@@ -1,16 +1,12 @@
-var React = require('react-native');
-var Icon = require('./left_icon');
-var Util = require('./../common/util');
+import Icon from './left_icon' ;
+import Util from './util' ;
 
-var {
-  StyleSheet,
-  Text,
-  View,
-  ListView,
-  Image,
-  ScrollView,
-  TouchableOpacity
-  } = React;
+import React,{
+    TouchableOpacity,
+    View,
+    Text,
+    StyleSheet,
+} from 'react-native';
 
 module.exports = React.createClass({
   render: function(){

@@ -4,13 +4,12 @@
  * 主要提供工具方法
  *
  */
-var React = require('react-native');
-var Dimensions = require('Dimensions');
+import Dimensions from 'Dimensions';
 
-var {
+import React,{
   PixelRatio,
   ActivityIndicatorIOS
-  } = React;
+  } from 'react-native';
 
 module.exports = {
   navigationHeight: 44,
@@ -34,8 +33,8 @@ module.exports = {
     fetch(url)
       .then((response) => response.text())
       .then((responseText) => {
-        successCallback(JSON.parse(responseText));
         console.log(responseText);
+        successCallback(JSON.parse(responseText));
       })
       .catch(function(err){
         failCallback(err);

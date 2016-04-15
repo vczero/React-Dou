@@ -1,11 +1,10 @@
-var React = require('react-native');
-var Util = require('./util');
-var Header = require('./header');
+import Util from './util' ;
+import Header from './header' ;
 
-var {
+import React,{
   WebView,
   View
-  } = React;
+  } from 'react-native';
 
 module.exports = React.createClass({
   render: function(){
