@@ -1,14 +1,14 @@
-var React = require('react-native');
-var Util = require('./util');
-var Header = require('./header');
+import Util from './util' ;
+import Header from './header' ;
 
-var {
+import React,{
   WebView,
   View
-  } = React;
+  } from 'react-native';
 
 module.exports = React.createClass({
   render: function(){
+    console.log(this.props.url);
     return (
       <View>
         <Header
@@ -18,10 +18,9 @@ module.exports = React.createClass({
             title: this.props.title
           }}/>
         <WebView
-          contentInset={{top:-40}}
           startInLoadingState={true}
-          style={{width: Util.size.width, height:Util.size.height -50}}
-          url={this.props.url}></WebView>
+          style={{width: Util.size.width, height:Util.size.height - Util.navigationHeight - 44}}
+          source={{uri:this.props.url}}></WebView>
       </View>
     );
   }

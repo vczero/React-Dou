@@ -1,18 +1,15 @@
-var React = require('react-native');
-var Util = require('./util');
-var {
-  StyleSheet,
-  Text,
-  View,
-  TabBarIOS,
-  TextInput
-  } = React;
+import Util from './util' ;
+import React,{
+    StyleSheet,
+    TextInput,
+    View
+} from 'react-native';
 
 module.exports = React.createClass({
   render: function(){
     return (
       <View style={styles.flex_1}>
-        <TextInput style={[styles.flex_1, styles.input]} {...this.props}/>
+        <TextInput style={[styles.flex_1, styles.input]} autoCapitalize='none' clearButtonMode='while-editing' {...this.props}/>
       </View>
     );
   }

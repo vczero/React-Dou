@@ -4,15 +4,17 @@
  * 主要提供工具方法
  *
  */
-var React = require('react-native');
-var Dimensions = require('Dimensions');
+import Dimensions from 'Dimensions';
 
-var {
+import React,{
   PixelRatio,
   ActivityIndicatorIOS
-  } = React;
+  } from 'react-native';
 
 module.exports = {
+  navigationHeight: 44,
+  navigationBarBGColor:'#3497FF',
+  statusBarHeight: 20,
   /*最小线宽*/
   pixel: 1 / PixelRatio.get(),
 
@@ -31,6 +33,7 @@ module.exports = {
     fetch(url)
       .then((response) => response.text())
       .then((responseText) => {
+        console.log(responseText);
         successCallback(JSON.parse(responseText));
       })
       .catch(function(err){
@@ -38,5 +41,5 @@ module.exports = {
       });
   },
   /*loading效果*/
-  loading: <ActivityIndicatorIOS color="#3E00FF" style={{marginTop:40,marginLeft:Dimensions.get('window').width/2-10}}/>
+  loading: <ActivityIndicatorIOS color="#3E00FF" style={{marginTop:40}}/>
 };

@@ -1,19 +1,15 @@
-var React = require('react-native');
-var Search = require('./../common/search');
-var Util = require('./../common/util');
-var ServiceURL = require('./../common/service');
-var webView = require('./../common/webview');
-
-var {
-  StyleSheet,
-  Text,
-  View,
-  ListView,
-  Image,
-  ScrollView,
-  ActivityIndicatorIOS,
-  TouchableOpacity
-  } = React;
+import Util from './../common/util' ;
+import Search from './../common/search' ;
+import ServiceURL from './../common/service' ;
+import webView from './../common/webview' ;
+import React,{
+    StyleSheet,
+    View,
+    Text,
+    ListView,
+    Image,
+    TouchableOpacity
+} from 'react-native';
 
 module.exports = React.createClass({
   getInitialState: function() {
@@ -26,11 +22,11 @@ module.exports = React.createClass({
   },
   render: function(){
     return(
-      <ScrollView style={styles.flex_1}>
+        <View style={[styles.flex_1,{marginBottom:44}]}>
 
         <View style={[styles.search, styles.row]}>
           <View style={styles.flex_1}>
-            <Search placeholder="请输入电影名称" onChangeText={this._changeText}/>
+            <Search placeholder="请输入电影名称" onChangeText={this._changeText}  defaultValue={this.state.keywords}/>
           </View>
           <TouchableOpacity style={styles.btn} onPress={this._search}>
             <Text style={styles.fontFFF}>搜索</Text>
@@ -45,7 +41,7 @@ module.exports = React.createClass({
             : Util.loading
         }
 
-      </ScrollView>
+      </View>
     );
   },
 
@@ -75,7 +71,7 @@ module.exports = React.createClass({
         <View>
           <Image style={styles.img} source={{uri: row.images.medium}}/>
         </View>
-        <View>
+        <View style={{flex:1}}>
           <Text style={styles.textWitdh} numberOfLines={1}>
             名称：{row.title}
           </Text>
@@ -136,18 +132,19 @@ module.exports = React.createClass({
 var styles = StyleSheet.create({
   flex_1:{
     flex:1,
-    marginTop:5
   },
   search:{
     paddingLeft:5,
     paddingRight:5,
-    height:45
+    marginBottom:5,
+    height:40,
   },
   btn:{
-    width:50,
+    width:40,
     backgroundColor:'#0091FF',
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
+    marginLeft:Util.pixel,
   },
   fontFFF:{
     color:'#fff'
@@ -161,13 +158,14 @@ var styles = StyleSheet.create({
     resizeMode: Image.resizeMode.contain
   },
   textWitdh:{
-    width:200,
+    flex:1,
     marginLeft:10
   },
   item:{
     marginTop:10,
     height:140,
     paddingTop:15,
+    paddingBottom:5,
     paddingLeft:10,
     borderBottomWidth:Util.pixel,
     borderTopWidth:Util.pixel,
@@ -180,8 +178,8 @@ var styles = StyleSheet.create({
     width:60,
     borderWidth:Util.pixel,
     borderColor:'#3C9BFD',
-    marginLeft:30,
-    marginTop:10,
+    marginLeft:10,
+    marginTop:0,
     borderRadius:3
   }
 });

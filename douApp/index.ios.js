@@ -14,8 +14,9 @@ var {
   StatusBarIOS
 } = React;
 
-StatusBarIOS.setHidden(true);
+// StatusBarIOS.setHidden(true);
 var douApp = React.createClass({
+    
   getInitialState: function(){
     return {
       selectedTab: '图书'
@@ -23,7 +24,8 @@ var douApp = React.createClass({
   },
   render: function() {
     return (
-      <TabBarIOS>
+      <TabBarIOS tintColor="white"
+                 barTintColor="darkslateblue">
         <TabBarIOS.Item
           title="图书"
           selected={this.state.selectedTab === '图书'}

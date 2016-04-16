@@ -1,13 +1,11 @@
-var React = require('react-native');
-var Util = require('./../common/util');
-var {
-  StyleSheet,
-  Text,
-  View,
-  ListView,
-  Image,
-  TouchableOpacity
-  } = React;
+import Util from './../common/util' ;
+import React,{
+    StyleSheet,
+    View,
+    Text,
+    Image,
+    TouchableOpacity
+} from 'react-native';
 
 module.exports = React.createClass({
   render: function(){
@@ -19,15 +17,15 @@ module.exports = React.createClass({
         </View>
         <View style={styles.content}>
           <View>
-            <Text style={{width:200}} numberOfLines={1}>{row.title}</Text>
+            <Text style={{flex:1}} numberOfLines={1}>{row.title}</Text>
           </View>
           <View style={{marginTop:10}}>
-            <Text style={[styles.publisher, {width:200}]} numberOfLines={1}>{row.publisher}</Text>
+            <Text style={[styles.publisher, {flex:1}]} numberOfLines={1}>{row.publisher}</Text>
           </View>
           <View style={{marginTop:10}}>
-            <Text style={[styles.publisher, {width:200}]} numberOfLines={1}>{row.author}</Text>
+            <Text style={[styles.publisher, {flex:1}]} numberOfLines={1}>{row.author}</Text>
           </View>
-          <View style={[styles.row,{marginTop:10}]}>
+          <View style={[styles.row,{marginTop:10,flex:1}]}>
             <Text style={styles.price}>{row.price}</Text>
             <Text style={styles.pages}>{row.pages}页</Text>
           </View>
@@ -59,8 +57,10 @@ var styles = StyleSheet.create({
     alignItems:'center'
   },
   content:{
+    flex:1,
     marginTop:10,
-    marginLeft:10
+    marginLeft:10,
+    marginRight:10,
   },
   publisher:{
     color:'#A3A3A3',

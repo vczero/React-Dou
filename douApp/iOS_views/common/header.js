@@ -1,19 +1,15 @@
-var React = require('react-native');
-var Icon = require('./left_icon');
-var Util = require('./../common/util');
+import Icon from './left_icon' ;
+import Util from './util' ;
 
-var {
-  StyleSheet,
-  Text,
-  View,
-  ListView,
-  Image,
-  ScrollView,
-  TouchableOpacity
-  } = React;
+import React,{
+    TouchableOpacity,
+    View,
+    Text,
+    StyleSheet,
+} from 'react-native';
 
 module.exports = React.createClass({
-  render: function(){
+  render(){
     var obj = this.props.initObj;
     return (
       <View style={[styles.header, styles.row, styles.center]}>
@@ -38,8 +34,8 @@ var styles = StyleSheet.create({
     flexDirection:'row'
   },
   header:{
-    height:50,
-    backgroundColor:'#3497FF'
+    height:Util.navigationHeight ,
+    backgroundColor:Util.navigationBarBGColor,
   },
   fontFFF:{
     color:'#fff',
@@ -51,7 +47,7 @@ var styles = StyleSheet.create({
   },
   titlePos:{
     marginLeft:-20,
-    width:200
+    width:200,
   },
   center:{
     justifyContent:'center',

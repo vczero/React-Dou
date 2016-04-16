@@ -1,20 +1,17 @@
-var React = require('react-native');
-var Search = require('./../common/search');
-var Util = require('./../common/util');
-var ServiceURL = require('./../common/service');
-var BookItem = require('./book_item');
-var BookDetail = require('./book_detail');
-
-var {
-  StyleSheet,
-  Text,
-  View,
-  ListView,
-  Image,
-  ScrollView,
-  ActivityIndicatorIOS,
-  TouchableOpacity
-  } = React;
+import Util from './../common/util' ;
+import Search from './../common/search' ;
+import ServiceURL from './../common/service' ;
+import BookItem from './book_item' ;
+import BookDetail from './book_detail' ;
+import React,{
+    StyleSheet,
+    View,
+    Text,
+    Image,
+    TouchableOpacity,
+    ScrollView,
+    ListView
+} from 'react-native';
 
 module.exports = React.createClass({
   getInitialState: function() {
@@ -27,11 +24,11 @@ module.exports = React.createClass({
   },
   render: function(){
     return(
-      <ScrollView style={styles.flex_1}>
+      <View style={[styles.flex_1,{marginBottom:44}]}>
 
         <View style={[styles.search, styles.row]}>
           <View style={styles.flex_1}>
-            <Search placeholder="请输入图书的名称" onChangeText={this._changeText}/>
+            <Search placeholder="请输入图书的名称" onChangeText={this._changeText} defaultValue={this.state.keywords}/>
           </View>
           <TouchableOpacity style={styles.btn} onPress={this._search}>
             <Text style={styles.fontFFF}>搜索</Text>
@@ -45,7 +42,7 @@ module.exports = React.createClass({
             />
           : Util.loading
         }
-      </ScrollView>
+      </View>
     );
   },
   componentDidMount: function(){
@@ -100,18 +97,19 @@ module.exports = React.createClass({
 var styles = StyleSheet.create({
   flex_1:{
     flex:1,
-    marginTop:5
   },
   search:{
     paddingLeft:5,
     paddingRight:5,
-    height:45
+    marginBottom:5,
+    height:40,
   },
   btn:{
-    width:50,
+    width:40,
     backgroundColor:'#0091FF',
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
+    marginLeft:Util.pixel,
   },
   fontFFF:{
     color:'#fff'
