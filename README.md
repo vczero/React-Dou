@@ -12,3 +12,7 @@
 
 ## 效果如下图
 ![](ReactDou.gif)
+
+## 下载运行
++ cd (文件目录)
++ npm install（其实和pod install 道理一样）
